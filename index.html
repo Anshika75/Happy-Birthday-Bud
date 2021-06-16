@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    </head>
+    <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+main{
+    position:relative;
+    top:0;
+    left:0;
+    background:green;
+    height:100vh;
+    width:100vw;
+    background-image: linear-gradient(67.5deg, rgb(68, 65, 139) 0%, rgb(68, 65, 139) 2%,rgb(89, 77, 155) 2%, rgb(89, 77, 155) 18%,rgb(110, 88, 171) 18%, rgb(110, 88, 171) 23%,rgb(131, 100, 187) 23%, rgb(131, 100, 187) 64%,rgb(151, 111, 203) 64%, rgb(151, 111, 203) 93%,rgb(172, 123, 219) 93%, rgb(172, 123, 219) 95%,rgb(193, 134, 235) 95%, rgb(193, 134, 235) 100%),linear-gradient(22.5deg, rgb(68, 65, 139) 0%, rgb(68, 65, 139) 2%,rgb(89, 77, 155) 2%, rgb(89, 77, 155) 18%,rgb(110, 88, 171) 18%, rgb(110, 88, 171) 23%,rgb(131, 100, 187) 23%, rgb(131, 100, 187) 64%,rgb(151, 111, 203) 64%, rgb(151, 111, 203) 93%,rgb(172, 123, 219) 93%, rgb(172, 123, 219) 95%,rgb(193, 134, 235) 95%, rgb(193, 134, 235) 100%),linear-gradient(45deg, rgb(68, 65, 139) 0%, rgb(68, 65, 139) 2%,rgb(89, 77, 155) 2%, rgb(89, 77, 155) 18%,rgb(110, 88, 171) 18%, rgb(110, 88, 171) 23%,rgb(131, 100, 187) 23%, rgb(131, 100, 187) 64%,rgb(151, 111, 203) 64%, rgb(151, 111, 203) 93%,rgb(172, 123, 219) 93%, rgb(172, 123, 219) 95%,rgb(193, 134, 235) 95%, rgb(193, 134, 235) 100%),linear-gradient(90deg, rgb(68, 65, 139) 0%, rgb(68, 65, 139) 2%,rgb(89, 77, 155) 2%, rgb(89, 77, 155) 18%,rgb(110, 88, 171) 18%, rgb(110, 88, 171) 23%,rgb(131, 100, 187) 23%, rgb(131, 100, 187) 64%,rgb(151, 111, 203) 64%, rgb(151, 111, 203) 93%,rgb(172, 123, 219) 93%, rgb(172, 123, 219) 95%,rgb(193, 134, 235) 95%, rgb(193, 134, 235) 100%),linear-gradient(90deg, rgb(25, 139, 21),rgb(240, 31, 57));
+     background-blend-mode:overlay,overlay,overlay,overlay,normal;
+}
+
+.card{    
+    height:90vh;
+    width:85vw;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background-image: linear-gradient(90deg, rgb(168, 86, 201) 0%, rgb(168, 86, 201) 3%,rgb(140, 74, 173) 3%, rgb(140, 74, 173) 11%,rgb(112, 61, 145) 11%, rgb(112, 61, 145) 20%,rgb(85, 49, 118) 20%, rgb(85, 49, 118) 49%,rgb(57, 37, 90) 49%, rgb(57, 37, 90) 71%,rgb(29, 24, 62) 71%, rgb(29, 24, 62) 72%,rgb(1, 12, 34) 72%, rgb(1, 12, 34) 100%),linear-gradient(67.5deg, rgb(168, 86, 201) 0%, rgb(168, 86, 201) 3%,rgb(140, 74, 173) 3%, rgb(140, 74, 173) 11%,rgb(112, 61, 145) 11%, rgb(112, 61, 145) 20%,rgb(85, 49, 118) 20%, rgb(85, 49, 118) 49%,rgb(57, 37, 90) 49%, rgb(57, 37, 90) 71%,rgb(29, 24, 62) 71%, rgb(29, 24, 62) 72%,rgb(1, 12, 34) 72%, rgb(1, 12, 34) 100%),linear-gradient(112.5deg, rgb(168, 86, 201) 0%, rgb(168, 86, 201) 3%,rgb(140, 74, 173) 3%, rgb(140, 74, 173) 11%,rgb(112, 61, 145) 11%, rgb(112, 61, 145) 20%,rgb(85, 49, 118) 20%, rgb(85, 49, 118) 49%,rgb(57, 37, 90) 49%, rgb(57, 37, 90) 71%,rgb(29, 24, 62) 71%, rgb(29, 24, 62) 72%,rgb(1, 12, 34) 72%, rgb(1, 12, 34) 100%),linear-gradient(45deg, rgb(168, 86, 201) 0%, rgb(168, 86, 201) 3%,rgb(140, 74, 173) 3%, rgb(140, 74, 173) 11%,rgb(112, 61, 145) 11%, rgb(112, 61, 145) 20%,rgb(85, 49, 118) 20%, rgb(85, 49, 118) 49%,rgb(57, 37, 90) 49%, rgb(57, 37, 90) 71%,rgb(29, 24, 62) 71%, rgb(29, 24, 62) 72%,rgb(1, 12, 34) 72%, rgb(1, 12, 34) 100%),linear-gradient(90deg, rgb(95, 3, 74),rgb(35, 65, 96));
+     background-blend-mode:overlay,overlay,overlay,overlay,normal;
+    box-shadow:0 0 1vmin 1vmin #0002;
+    overflow:hidden;
+    border-radius:1rem;
+    perspective: 600px;
+    transform-style: preserve-3d;
+}
+.box{
+    height:50%;
+    width:50%;
+    position:absolute;
+    transform-origin:top;
+    background-size:100% 100%;
+    background-image:url("https://api.sololearn.com/Uploads/Avatars/19457006.jpg");
+    display:grid;
+    place-items:center;
+}
+.b1{
+    top:0;
+    left:0;
+    /*transform: rotateY(90deg);*/
+    transform-origin:left;
+    transition:all 2s ease;
+    /*border-radius:0 2rem 2rem 0;*/
+    background-image:linear-gradient(-45deg, #E41EE8, #5F208E);
+}
+.b2{
+    top:0;
+    right:0;
+    transform-origin:right;
+    transition:all 2s ease;
+    background-image:linear-gradient(45deg, #E41EE8, #5F208E);
+}
+.b3{
+    bottom:0;
+    left:0;
+    transform-origin:left;
+    transition:all 2s ease;    
+    background-image:linear-gradient(-135deg, #E41EE8, #5F208E);
+}
+.b4{
+    bottom:0;
+    right:0;
+    transform-origin:right;
+    transition:all 2s ease;
+    background-image:linear-gradient(135deg, #E41EE8, #5F208E);
+    
+}
+.btn{
+    height:100px;
+    width:100px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background-color:blue;
+    transition:all 2s ease;
+    border-radius:2rem;
+    background:linear-gradient(45deg, #5E3093, #5F208E);
+    display:grid;
+    place-items:center;
+    font-size:1.3rem;
+    text-transform:uppercase;
+    font-weight:500;
+    font-family:"Dela Gothic One";
+    color:wheat;
+    text-shadow:0 0 2px #fff5;
+    box-shadow:0 0 0.5vmin 0.5vmin #1115 ;
+}
+p{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px); 
+    border-top: 1px solid rgba(255,255,255,0.2); 
+    border-left: 1px solid rgba(255,255,255,0.2); 
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2); 
+    border-radius: 3px;
+    padding:5px;
+    width:90%;
+    font-family: 'Viaoda Libre', cursive;
+    text-align:center;
+    font-weight:700;
+}
+.essay{
+    height:80%;
+    width:70%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background-image: linear-gradient(157.5deg, rgb(95, 97, 179) 0%, rgb(95, 97, 179) 16%,rgb(115, 120, 184) 16%, rgb(115, 120, 184) 20%,rgb(135, 142, 188) 20%, rgb(135, 142, 188) 32%,rgb(155, 165, 193) 32%, rgb(155, 165, 193) 38%,rgb(175, 187, 198) 38%, rgb(175, 187, 198) 48%,rgb(195, 210, 203) 48%, rgb(195, 210, 203) 51%,rgb(215, 232, 207) 51%, rgb(215, 232, 207) 59%,rgb(235, 255, 212) 59%, rgb(235, 255, 212) 100%),linear-gradient(135deg, rgb(95, 97, 179) 0%, rgb(95, 97, 179) 16%,rgb(115, 120, 184) 16%, rgb(115, 120, 184) 20%,rgb(135, 142, 188) 20%, rgb(135, 142, 188) 32%,rgb(155, 165, 193) 32%, rgb(155, 165, 193) 38%,rgb(175, 187, 198) 38%, rgb(175, 187, 198) 48%,rgb(195, 210, 203) 48%, rgb(195, 210, 203) 51%,rgb(215, 232, 207) 51%, rgb(215, 232, 207) 59%,rgb(235, 255, 212) 59%, rgb(235, 255, 212) 100%),linear-gradient(112.5deg, rgb(95, 97, 179) 0%, rgb(95, 97, 179) 16%,rgb(115, 120, 184) 16%, rgb(115, 120, 184) 20%,rgb(135, 142, 188) 20%, rgb(135, 142, 188) 32%,rgb(155, 165, 193) 32%, rgb(155, 165, 193) 38%,rgb(175, 187, 198) 38%, rgb(175, 187, 198) 48%,rgb(195, 210, 203) 48%, rgb(195, 210, 203) 51%,rgb(215, 232, 207) 51%, rgb(215, 232, 207) 59%,rgb(235, 255, 212) 59%, rgb(235, 255, 212) 100%),linear-gradient(90deg, rgb(236, 151, 145),rgb(201, 243, 43));
+     background-blend-mode:overlay,overlay,overlay,normal;
+    box-shadow:0 0 1vmin 1vmin #2224;
+    display:grid;
+    place-items:center;
+}
+.essay p{
+    height:90%;
+    overflow-y:scroll;
+}
+.main{
+    position:absolute;
+    top:0;
+    left:0;
+    background:black;
+    z-index:10;    
+    animation:anim 5s 5s linear both;
+}
+.profile{
+    position:absolute;
+    top:30%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background-color:#000;
+    box-shadow:0 0 1vmin 1vmin #3335;
+    background-size:100% 100%;
+    background-image:url("https://api.sololearn.com/Uploads/Avatars/19457006.jpg");
+}
+.hbd{
+    position:absolute;
+    top:70%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:white;
+    font-family:"Dela Gothic One";
+    color:wheat;
+    text-shadow:0 0 20px #fff5;
+    font-size:2.5rem;
+    text-align:center;
+}
+@keyframes anim{
+    100%{
+        display:none;
+        opacity:0;
+        z-index:-10;
+    }
+}
+    </style>
+    <audio controls style=" display:none;" loop   id="a"  >
+ <source id="audio" src="https://www.dropbox.com/s/lnrknizpf6xdzfe/y2mate.com%20-%20tu%20sansaar%20hamara%20hai%20%20vicky%20d%20parekh%20%20birthday%20special%20%20customise%20songs.mp3?dl=1">
+    <script>
+     Swal.fire('Happy birthday Bud🎊\n A small try🧗‍♀️ to express my gratitude🤗 \n It is quite simple😕 and boring😥 as I am a beginner😔  Sorry bhaiya due to few issues couldnt make it to your bday but aakr party wasooloongi 😁 ')
+        </script>  
+      </audio> 
+    <main>
+    <div class="card card1">
+    <div class="essay">
+        <p>
+           Sometimes I feel like I got you as a reward for some good work I did. I am incredibly lucky to have found you. I know that no matter what happens, you will always be there for me. You have no idea how genuinely beautiful you are inside and out. <br><b>Wishing You VeryVery Happy Birthday To You<br></b>Happy birthday 🎂 bud
+May all your wishes comes true and you have a never ending smile on your face forever 😊 
+Wishing you a year filled with joy success and happiness 😊 and yeah lots of maggi chocolate 🍫 and ice creams 🍦 too
+        </p>
+    </div>
+    <div class="box b1" id="b1"><p>        
+You look so good when you smile,
+All the time and all the while,
+So let it stay there,
+And do keep smiling as always!
+    </p></div>
+    <div class="box b2" id="b2"><p>
+Your brothership is like a star,
+Though far,
+It is always bright,
+When you are with me,
+Everything is alright!
+    </p></div>
+    <div class="box b3" id="b3"><p>
+       A brother like you is the biggest asset without any depreciation in the balance sheet of life. 
+    </p></div>
+    <div class="box b4" id="b4">
+        <p>
+            You are my brother who listens, doesn’t judge and somehow makes everything alright.
+        </p>
+    </div>
+    <div class="btn" id="btn" onclick="op()">Open</div>
+    
+    </div>
+    
+    </main>    
+    <main class="main">
+        <div class="profile"></div>
+        <div class="hbd">
+            HAPPY BIRTHDAY TO YOU🎉
+        </div>
+    </main>
+    <script>
+        function op(){
+    var b1= document.getElementById("b1");
+    var b2= document.getElementById("b2");
+    var b3= document.getElementById("b3");
+    var b4= document.getElementById("b4");
+    var btn= document.getElementById("btn");
+    b1.style.transform="rotateY(90deg)";
+    b1.style.borderRadius="0 2rem 2rem 0";
+    b2.style.transform="rotateY(-90deg)";
+    b2.style.borderRadius="2rem 0 0 2rem ";
+    b3.style.transform="rotateY(90deg)";
+    b3.style.borderRadius="0 2rem 2rem 0";
+    b4.style.transform="rotateY(-90deg)";
+    b4.style.borderRadius="2rem 0 0 2rem ";
+    btn.style.display="none";
+    
+}
+
+window.addEventListener("mouseover",play);
+window.addEventListener("click",play);
+function play() { document.getElementById("a").play();
+}
+    </script>
+    </body>
+</html>
